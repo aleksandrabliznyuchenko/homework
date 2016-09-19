@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><b>Личная страница Александры Близнюченко></b></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="description" content="Личная страница">
+</head>
+<body>
+<h1>Александра Близнюченко</h1>
+<p>http://vk.com/cherny_obelisk </p>
+<div class=”col-md-4”>
+<img src=”https://pp.vk.me/c323919/v323919268/fad/4ymzQlXYDug.jpg” height:340px; width:512px;>
+</div>
+<article>
+<h2>Я люблю:</h2>
+<p>Книги: особенно произведения Ремарка и Брэдбери <br />
+<p>Фильмы: особенно советские <br />
+<p>Сериалы: как правило, американские <br />
+<p>Лыжи: особенно горные <br />
+<p>Путешествия: особенно по Европе <br />
+<p>Езду в поезде спиной к направлению движения <br />
+<p>Коллекционировать магниты и театральные программки<br/>
+</article>
+</body>
+</html>
