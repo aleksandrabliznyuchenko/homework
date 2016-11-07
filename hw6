@@ -1,7 +1,7 @@
 N = int(input('Введите число N: '))
 for i in range (N):
     i = input('Введите слово: ')
-    if i != 'программирование':
+    if i != 'программирование' and i != 'Программирование':
         continue
     else:
         break
