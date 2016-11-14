@@ -1,0 +1,7 @@
+word = input('Введите латинское слово: ')
+latin = []
+while word != '':
+    latin.append(word)
+    word = input('Введите латинское слово: ')
+for elem in latin:
+    print(elem)
