@@ -1,1 +1,19 @@
+import urllib.request
+import re
 
+req = urllib.request.Request('https://ks-yanao.ru/novosti/')
+with urllib.request.urlopen(req) as response:
+   html = response.read().decode('utf-8')
+regPostTitle = re.compile('<ul class="info-list list-unstyled font-open-s news-list">.*?</ul>', flags= re.DOTALL)
+titles = regPostTitle.findall(html)
+new_titles = []
+regTag = re.compile('<.*?>', re.DOTALL)
+regSpace = re.compile('\s{2,}', re.DOTALL)
+for t in titles:
+    clean_t = regSpace.sub("", t)
+    clean_t = regTag.sub("", clean_t)
+    new_titles.append(clean_t)
+for t in new_titles:
+    t.replace("&nbsp;&rarr;", " -> ")
+with open('titles.txt', 'w', encoding = 'utf-8') as f:
+    f.write(t)
