@@ -1,0 +1,146 @@
+import html
+import os
+import re
+import time
+import urllib.request
+
+# выкачиваем HTML-код со страницы
+def download_page(commonUrl, i):
+    total = []
+    pageUrl = str(commonUrl) + 'archive.php?article=' + str(i)
+    try:
+        page = urllib.request.urlopen(pageUrl)
+        text = page.read().decode('utf-8')
+        text = text.replace('\'', '"')
+        Text = total.append(text)
+        print('I am working on article ' + str(i))
+    except ConnectionResetError or TimeoutError :
+            time.sleep(20)
+            text = ''
+    except urllib.error.HTTPError or urllib.error.URLError:
+        print('Url error in ' + pageUrl)
+        text = ''
+    return pageUrl, total
+
+# чистим HTML от переносов строк и т.д.   
+def text_cleaner(total):
+    regLine = re.compile('\\\\n', re.DOTALL)
+    regStuff = re.compile('\\\\t|\\\\r', re.DOTALL)
+    text = regLine.sub('', str(total))
+    prepared_text = regStuff.sub('', text)
+    return prepared_text
+
+# получаем тест статьи без тегов
+def article_maker(prepared_text):
+    tagged_article = re.findall('<div class="article">.*?</div>', str(prepared_text), re.DOTALL)
+    regTag = re.compile('<.*?>', re.DOTALL)
+    tag_free = regTag.sub('', str(tagged_article))
+    article = re.sub('&nbsp;', '', tag_free)
+    article = html.unescape(article)
+    return article
+
+# получаем метаданные и чистим их (много строк, но разбивать на 4 функции нет сил, извините! )   
+def get_metadata(prepared_text):
+    name_tag = re.findall('<img src="images/author.jpg" style="padding-left:20px; padding-right:5px; float:left;">.*?</div>', str(prepared_text), flags = re.DOTALL)
+    regTag = re.compile('<.*?>')
+    name = regTag.sub('', str(name_tag))
+    name = name.replace('\'', '')
+    name = name.replace('[', '')
+    name = name.replace(']', '')
+
+    date_tag = re.findall('<img src="images/clock.jpg" style="padding-left:12px; padding-right:5px; float:left;">.*?</div>', str(prepared_text), flags = re.DOTALL)
+    date = regTag.sub('', str(date_tag))
+    date = date.split() # дата представлена в формате "дата + время публикации", поэтому рассплитим строку и возьмём первый элемент - только дату
+    date = date[0]
+    
+    title_tag = re.findall('<div class="title">.*?</div>', str(prepared_text), flags = re.DOTALL)
+    title = regTag.sub('', str(title_tag))
+    title = title.replace('\'', '')
+    title = title.replace('[', '')
+    title = title.replace(']', '')
+    
+    topic_tag = re.findall('<div class="razdel">.*?</div>', str(prepared_text), flags = re.DOTALL)
+    topic = regTag.sub('', str(topic_tag))
+    topic = topic.replace('\'', '')
+    topic = topic.replace('[', '')
+    topic = topic.replace(']', '')
+
+    return name, date, title, topic
+
+def mystem_xml_directory(inp):
+    lst = os.listdir(inp)
+    for fl in lst:
+        os.system(r"C:\Users\AleksandraB\Desktop\Programmin~\mystem.exe --format xml -i -n " + inp + os.sep + fl + " Istoki\mystem-xml" + os.sep + fl)
+
+
+def mystem_plain_directory(inp):
+    lst = os.listdir(inp)
+    for fl in lst:
+        os.system(r"C:\Users\AleksandraB\Desktop\Programmin~\mystem.exe -i -n " + inp + os.sep + fl + " Istoki\mystem-plain" + os.sep + fl)
+
+
+def mystem_xml(inp, fl):
+    mystem = r"C:\Users\AleksandraB\Desktop\Programmin~\mystem.exe --format xml -i -n " + r" Istoki\plain" + os.sep + inp + os.sep + fl + " Istoki\mystem-xml" + os.sep + inp + os.sep + fl
+    os.system(mystem)
+
+
+def mystem_plain (inp, fl):
+    mystem = r"C:\Users\AleksandraB\Desktop\Programmin~\mystem.exe -i -n " + r" Istoki\plain" + os.sep + inp + os.sep + fl + " Istoki\mystem-plain" + os.sep + inp + os.sep + fl
+    os.system(mystem)
+
+# разбиваем дату на год и месяц, прикрепляем метаданные к статье, создаём папки и раскладываем по ним тексты, предварительно размеченные в Mystem
+def make_directories(i, commonUrl, article, name, date, title, topic):
+    csv = 'path' + '\t' + 'author' + '\t' + 'sex' + '\t' + 'birthday' + '\t' + 'header' + '\t' + 'created' + '\t' + 'sphere' + '\t' + 'genre_fi' + '\t' + 'type' + '\t' + 'topic' + '\t' + 'chronotop' + '\t' + 'style' + '\t' + 'audience_age' + '\t' + 'audience_level' + '\t' + 'audience_size' + '\t' + 'source' + '\t' + 'publication' + '\t' + 'publ_year' + '\t' + 'medium' + '\t' + 'country' + '\t' + 'region' + '\t' + 'language'
+    if date:
+        date = date.replace('\'', '')
+        date = date.replace('[', '')
+        date = date.replace(' ', '')
+        date = date.split(',')
+        for elem in date:
+            try:
+                d = elem.split('.')
+                year = d[2]
+                month = d[1]
+                global date_definer
+                date_definer = os.path.join(year, month)
+                directory = os.path.join('Istoki', 'plain', date_definer)
+            except:
+                year = 'unknown year'
+                month = 'unknown month'
+                directory = os.path.join('Istoki', 'NotFound')
+                # статьи из этой директории были удалены - ссылки на них работают, но сами страницы никакой информации не содержат
+    url = str(commonUrl) + 'archive.php?article=' + str(i)
+    text = '@au ' + str(name) + '\n@ti ' + str(title) + '\n@da' + ' ' + str(date) + '\n@topic' + ' ' + str(topic) + '\n@url' + ' ' + url + '\n' + str(article)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    filename = 'article' + str(i)
+    mystem_plain_directory = os.path.join('Istoki', 'mystem-plain', date_definer)
+    if not os.path.exists(mystem_plain_directory):
+        os.makedirs(mystem_plain_directory)
+    mystem_xml_directory = os.path.join('Istoki', 'mystem-xml', date_definer)
+    if not os.path.exists(mystem_xml_directory):
+        os.makedirs(mystem_xml_directory)
+    mystem_xml(date_definer, filename+'.txt')
+    mystem_plain(date_definer, filename+'.txt')
+    directory = os.path.join(directory, filename+'.txt')
+    with open(directory, 'w', encoding = 'utf-8') as f:
+        f.write(text)
+        row = '%s\t%s\t\t\t%s\t%s\tпублицистика\t\t\t%s\t\tнейтральный\tн-возраст\tн-уровень\tгородская\t%s\tИстоки\t\t%s\tгазета\tРоссия\tУфа\tru'
+        csv += row % (directory, name, title, date, topic, url, year)
+    with open (os.path.join('Istoki', 'metadata.csv'), 'w', encoding = 'utf-8') as f:
+        f.write(csv)
+
+def main():
+    commonUrl = 'http://istoki-rb.ru/'
+    for i in range(5210, 5710):
+    # адрес каждой статьи заканчивается числом; всего статей в архиве около 5700; слов в статье в среднем 400-600; возьмём последние 500 статей
+        pageUrl, total = download_page(commonUrl, i)
+        prepared_text = text_cleaner(total)
+        article = article_maker(prepared_text)
+        name, date, title, topic = get_metadata(prepared_text)
+        make_directories(i, commonUrl, article, name, date, title, topic)
+        i += 1
+    # данные из определённой статьи проходят цикл выкачки, очистки, разметки и добавления в папку; только после этого программа переходит по новому URL-адресу
+    
+if __name__ == '__main__':
+    main()
