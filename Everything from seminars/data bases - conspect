@@ -14,3 +14,23 @@ id - обозначение уникального (!) номера; уника�
 Если данные нужно просто хранить, а обращаться к ним можно потом, запихивать их в базу данных необязательно
 База данных в виде таблиц, вложенных в одну таблицу, называется реляционной (!) таблицей
 Хороший сайт про базы данных: https://sqlbolt.com/lesson/select_queries_introduction
+
+>>> import sqlite3
+>>> conn = sqlite3.connect('C:\Users\AleksandraB\Desktop\Programmin~\hittite.db')
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+>>> conn = sqlite3.connect(r'C:\Users\AleksandraB\Desktop\Programmin~\hittite.db')
+>>> c = conn.cursor()
+>>> c.execute('CREATE TABLE movies (Id INTEGER PRIMARY KEY, Name TEXT, Meaning TEXT)')
+<sqlite3.Cursor object at 0x05BBB920>
+>>> c.execute('CREATE TABLE Glosses (Id INTEGER PRIMARY KEY, Name TEXT, Meaning TEXT)')
+<sqlite3.Cursor object at 0x05BBB920>
+>>> connect = sqlite3.connect('Glosses.db')
+>>> cur = connect.cursor()
+>>> cur.execute('INSERT INTO Glosses (Id, Name, Meaning) VALUES (1, "ADJ", "adjective")')
+Traceback (most recent call last):
+  File "<pyshell#8>", line 1, in <module>
+    cur.execute('INSERT INTO Glosses (Id, Name, Meaning) VALUES (1, "ADJ", "adjective")')
+sqlite3.OperationalError: no such table: Glosses
+>>> 
+В чем ошибка: я создала таблицу в базе данных Хитит
+А потом пытаюсь подключиться к этой ТАБЛИЦЕ как к базе данных
