@@ -5,7 +5,6 @@ import json
 
 app = Flask(__name__)
 
-answer = []
 
 @app.route('/')
 def index():
@@ -39,15 +38,18 @@ def stats():
     return render_template('stats.html', answers=answers, percent_male=percent_male,
                            percent_female=percent_female, cities=cities)
 
+
 @app.route('/json')
 def jsoned():
     with open('data.json', 'r', encoding = 'utf-8') as f2:
         data_from_json = f2.read()
     return data_from_json
 
+
 @app.route('/search')
 def search():
     return render_template('search.html')
+
 
 @app.route('/results')
 def results():
