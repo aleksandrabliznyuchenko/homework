@@ -1,0 +1,20 @@
+ADJ — adjective
+ADV — adverb
+AUX — auxiliary
+COMP — complementizer
+CONJ — conjunction
+CONN — connective
+N — noun
+NUM — cardinal
+P — preposition (postposition)
+PART — particle
+NEG — negative
+PRV — preverb
+PTCP — participle
+V — verb
+Q — question word
+DEM — demonstrative pronoun
+INDEF — indefinite pronoun
+PRON — pronoun
+POSS — possessive pronoun
+REL — relative pronoun
