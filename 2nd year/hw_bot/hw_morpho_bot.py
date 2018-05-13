@@ -10,6 +10,8 @@ from flask import request, render_template
 app = Flask(__name__)
 
 
+## создаём словарь из скачанных словоформ (который получается большим по объему, из-за чего сам сайт на Flask долго грузится)
+## на подборках словоформ меньшего размера работает хорошо
 def dictionary_maker():
     bigdict = {}
     with open('wordforms.txt', 'r', encoding = 'utf-8') as file:
@@ -21,16 +23,22 @@ def dictionary_maker():
     return bigdict
 
 
+## функция, которая анализирует подаваемое ей слово и подбирает ему рандомный аналог из созданного словаря по тэгу
+## если аналога введённому слову не находится, программа сообщит об этом
 def exchange(word, bigdict):
     candidates = []
     ana = morph.parse(word)[0]
     for key in bigdict:
         if str(ana.tag) in bigdict[key]['tag']:
             candidates.append(key)
-    random_form = choice(candidates)
-    return random_form
+    if candidates != []:
+        random_form = choice(candidates)
+    else:
+        random_form = '-- Не найдено аналога для слова "' + word + '" --'
+    return random_form 
 
 
+## делим фразу на слова, пропускаем каждое через замену слова и переписываем исходное предложение
 def new_phrase_maker(insert, bigdict):
     words = insert.split()
     sentence = ''
