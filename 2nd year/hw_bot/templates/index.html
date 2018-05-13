@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html>
+    <head>
+       <meta charset="utf-8">
+       <title>Morphological transformation of an input phrase</title>
+    </head>
+ <body>
+ 
+ <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  
+ <form action="">
+ <div class="p-3 mb-2 bg-info text-white">Морфологическая трансформация высказывания</div>
+ <p>Введите фразу на русском языке без знаков препинания: <input type="text" name="input_phrase" value=""></p>
+    <p><input type="submit"></p>
+
+<span id="inp_phrase">
+<p> 1). {{ insert }}  </p>
+</span>
+	
+<span id="final_sentence">
+ 2). {{ sentence }}
+</span> 
+
+</form>
+ 
+ </body>
+ </html>
