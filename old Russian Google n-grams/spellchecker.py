@@ -62,6 +62,8 @@ def final_edit_2(edits2_set, edits_in_freq, freq):
 
 
 def cleaner(elems, num):
+    if elems[num].isupper() == True:
+        elems[num] = elems[num].lower()
     if '_' in elems[num]:
         insert = elems[num].split('_')[0]
     else:
