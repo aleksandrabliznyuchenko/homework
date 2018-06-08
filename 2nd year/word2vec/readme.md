@@ -2,3 +2,5 @@
 
 Картиночки:
 supernatural_matplotlib -- некрасивая картинка из matplotlib
+
+supernatural_gephi -- более осмысленная картинка из Gephi
