@@ -1,3 +1,8 @@
+## Ваша задача построить сеть для произвольного семантического поля, 
+## где узлами будут слова, а ребрами наличие косинусного расстояния больше 0.5 в word2vec-модели. 
+## Вычислите самые центральные слова графа, его радиус (для каждой компоненты связности) и коэффициент кластеризации.
+## Наше семантическое поле - сверхъестественные существа (как русской, так и западной традиции)
+
 import sys
 import gensim, logging
 import matplotlib.pyplot as plt
@@ -7,6 +12,7 @@ import networkx as nx
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 
+## Тренируем модель
 def model_creator():
     m = 'ruscorpora_upos_skipgram_300_5_2018.vec.gz'
     if m.endswith('.vec.gz'):
@@ -28,6 +34,7 @@ def semantic_field(model, words):
     return G
 
 
+## Задаем узлы графа
 def nodes(model, words):
     G = semantic_field(model, words)
     for word in words:
@@ -37,6 +44,7 @@ def nodes(model, words):
     return G
 
 
+## Задаем ребра графа и сохраняем его
 def edges(model, G):
     nodelist = G.nodes()
     for first_node in nodelist:
@@ -51,6 +59,7 @@ def edges(model, G):
     nx.write_gexf(G, 'supernatural.gexf')
 
 
+## Визуализируем граф в matplotlib
 def graph_maker(G):
     pos = nx.spring_layout(G)
     nx.draw_networkx_nodes(G, pos, node_color = '#98eff9', node_size = 50)
@@ -60,6 +69,7 @@ def graph_maker(G):
     plt.show()
     
 
+## Вычислим 10 центральных слов
 def central_words(G):
     print('Центральные слова графа:')
     degree = nx.degree_centrality(G)
@@ -70,11 +80,13 @@ def central_words(G):
             print(nodeid)
 
 
+## Вычислим коэффициент кластеризации
 def clusterization(G):
     print('Коэффициент кластеризации графа:')
     print(nx.average_clustering(G))
 
-    
+
+## Вычислим радиус графа для каждой компоненты связности
 def radius(G):
     for component in nx.connected_components(G):
         sub_G = G.subgraph(component)
@@ -100,3 +112,35 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+## Результаты:
+
+## Центральные слова графа:
+## ведьма
+## дьяволица
+## дьявол
+## вурдалак
+## колдун
+## кикимора
+## демон
+## оборотень
+## леший
+## привидение
+## ангел
+
+## Коэффициент кластеризации графа:
+## 0.329616724738676
+
+## Радиус:
+## {'призрак', 'вампир', 'кикимора', 'эльф', 'вурдалак', 'оборотень', 'зомби', 'водяной', 'ведьма', 'дьяволица', 'демон', 'гном', 'ангел', 'черт', 'орк', 'леший', 'чертенок', 'привидение', 'бес', 'гоблин', 'русалка', 'серафим', 'колдун', 'дьявол', 'упырь', 'фея'} : 3
+## {'сирена'} : 0
+## {'существо', 'божество', 'тварь', 'бог'} : 1
+## {'домовой'} : 0
+## {'дух'} : 0
+## {'создание'} : 0
+## {'полтергейст'} : 0
+## {'джинн'} : 0
+## {'монстр'} : 0
+## {'дракон', 'единорог'} : 1
+## {'чертик'} : 0
+## {'феникс'} : 0
