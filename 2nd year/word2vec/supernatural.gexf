@@ -6,110 +6,110 @@
       <lastmodified>08/06/2018</lastmodified>
     </meta>
     <nodes>
-      <node id="орк" label="орк" />
-      <node id="демон" label="демон" />
-      <node id="сирена" label="сирена" />
-      <node id="русалка" label="русалка" />
-      <node id="домовой" label="домовой" />
-      <node id="чертик" label="чертик" />
-      <node id="дьявол" label="дьявол" />
-      <node id="черт" label="черт" />
-      <node id="леший" label="леший" />
-      <node id="дух" label="дух" />
-      <node id="гоблин" label="гоблин" />
-      <node id="упырь" label="упырь" />
-      <node id="монстр" label="монстр" />
-      <node id="единорог" label="единорог" />
-      <node id="дракон" label="дракон" />
-      <node id="тварь" label="тварь" />
-      <node id="кикимора" label="кикимора" />
-      <node id="полтергейст" label="полтергейст" />
-      <node id="бес" label="бес" />
-      <node id="божество" label="божество" />
-      <node id="фея" label="фея" />
-      <node id="зомби" label="зомби" />
-      <node id="ведьма" label="ведьма" />
-      <node id="колдун" label="колдун" />
-      <node id="создание" label="создание" />
-      <node id="существо" label="существо" />
       <node id="феникс" label="феникс" />
       <node id="оборотень" label="оборотень" />
-      <node id="водяной" label="водяной" />
-      <node id="привидение" label="привидение" />
-      <node id="серафим" label="серафим" />
-      <node id="джинн" label="джинн" />
       <node id="гном" label="гном" />
-      <node id="ангел" label="ангел" />
-      <node id="призрак" label="призрак" />
-      <node id="чертенок" label="чертенок" />
-      <node id="бог" label="бог" />
       <node id="эльф" label="эльф" />
-      <node id="дьяволица" label="дьяволица" />
-      <node id="вурдалак" label="вурдалак" />
+      <node id="монстр" label="монстр" />
+      <node id="колдун" label="колдун" />
+      <node id="леший" label="леший" />
+      <node id="божество" label="божество" />
+      <node id="создание" label="создание" />
+      <node id="призрак" label="призрак" />
+      <node id="зомби" label="зомби" />
       <node id="вампир" label="вампир" />
+      <node id="единорог" label="единорог" />
+      <node id="чертик" label="чертик" />
+      <node id="орк" label="орк" />
+      <node id="джинн" label="джинн" />
+      <node id="русалка" label="русалка" />
+      <node id="вурдалак" label="вурдалак" />
+      <node id="бог" label="бог" />
+      <node id="водяной" label="водяной" />
+      <node id="ведьма" label="ведьма" />
+      <node id="дьявол" label="дьявол" />
+      <node id="бес" label="бес" />
+      <node id="чертенок" label="чертенок" />
+      <node id="демон" label="демон" />
+      <node id="фея" label="фея" />
+      <node id="полтергейст" label="полтергейст" />
+      <node id="кикимора" label="кикимора" />
+      <node id="упырь" label="упырь" />
+      <node id="дракон" label="дракон" />
+      <node id="домовой" label="домовой" />
+      <node id="тварь" label="тварь" />
+      <node id="привидение" label="привидение" />
+      <node id="ангел" label="ангел" />
+      <node id="серафим" label="серафим" />
+      <node id="черт" label="черт" />
+      <node id="гоблин" label="гоблин" />
+      <node id="дьяволица" label="дьяволица" />
+      <node id="существо" label="существо" />
+      <node id="дух" label="дух" />
+      <node id="сирена" label="сирена" />
     </nodes>
     <edges>
-      <edge id="0" source="орк" target="гоблин" weight="0.528703281708" />
-      <edge id="1" source="демон" target="дьяволица" weight="0.511176040992" />
-      <edge id="2" source="демон" target="оборотень" weight="0.502181472156" />
-      <edge id="3" source="демон" target="колдун" weight="0.51147440368" />
-      <edge id="4" source="демон" target="ангел" weight="0.58600063525" />
-      <edge id="5" source="демон" target="дьявол" weight="0.667390294722" />
-      <edge id="6" source="демон" target="ведьма" weight="0.509264501017" />
-      <edge id="7" source="демон" target="бес" weight="0.645017585552" />
-      <edge id="8" source="русалка" target="ведьма" weight="0.51882829386" />
-      <edge id="9" source="русалка" target="леший" weight="0.574191801697" />
-      <edge id="10" source="дьявол" target="ангел" weight="0.542488445141" />
-      <edge id="11" source="дьявол" target="ведьма" weight="0.541767733224" />
-      <edge id="12" source="дьявол" target="колдун" weight="0.517261201714" />
-      <edge id="13" source="дьявол" target="кикимора" weight="0.500116114157" />
-      <edge id="14" source="дьявол" target="дьяволица" weight="0.613888283469" />
-      <edge id="15" source="дьявол" target="черт" weight="0.58422307417" />
-      <edge id="16" source="дьявол" target="бес" weight="0.668134378752" />
-      <edge id="17" source="леший" target="ведьма" weight="0.501267969717" />
-      <edge id="18" source="леший" target="колдун" weight="0.539302018458" />
-      <edge id="19" source="леший" target="кикимора" weight="0.55197367868" />
-      <edge id="20" source="леший" target="привидение" weight="0.542685294236" />
-      <edge id="21" source="леший" target="водяной" weight="0.532187377614" />
-      <edge id="22" source="гоблин" target="упырь" weight="0.536760611811" />
-      <edge id="23" source="гоблин" target="эльф" weight="0.535286039254" />
-      <edge id="24" source="гоблин" target="вурдалак" weight="0.512230321993" />
-      <edge id="25" source="упырь" target="оборотень" weight="0.521796383025" />
-      <edge id="26" source="упырь" target="вампир" weight="0.525715887114" />
-      <edge id="27" source="упырь" target="вурдалак" weight="0.620445008348" />
-      <edge id="28" source="единорог" target="дракон" weight="0.51971851638" />
-      <edge id="29" source="тварь" target="существо" weight="0.63481571388" />
-      <edge id="30" source="тварь" target="божество" weight="0.50511881199" />
-      <edge id="31" source="кикимора" target="ведьма" weight="0.571160009159" />
-      <edge id="32" source="кикимора" target="колдун" weight="0.505274798339" />
-      <edge id="33" source="кикимора" target="чертенок" weight="0.555720695934" />
-      <edge id="34" source="кикимора" target="водяной" weight="0.53442101508" />
-      <edge id="35" source="кикимора" target="дьяволица" weight="0.553747442496" />
-      <edge id="36" source="бес" target="дьяволица" weight="0.500742027685" />
-      <edge id="37" source="бес" target="ангел" weight="0.522231361879" />
-      <edge id="38" source="божество" target="существо" weight="0.518559718776" />
-      <edge id="39" source="божество" target="бог" weight="0.633046769162" />
-      <edge id="40" source="фея" target="эльф" weight="0.611393952458" />
-      <edge id="41" source="зомби" target="вампир" weight="0.551754506283" />
-      <edge id="42" source="зомби" target="вурдалак" weight="0.51038581935" />
-      <edge id="43" source="ведьма" target="оборотень" weight="0.540269717164" />
-      <edge id="44" source="ведьма" target="колдун" weight="0.672205785991" />
-      <edge id="45" source="ведьма" target="привидение" weight="0.51704438039" />
-      <edge id="46" source="ведьма" target="дьяволица" weight="0.554343908379" />
-      <edge id="47" source="ведьма" target="вурдалак" weight="0.524246224909" />
-      <edge id="48" source="колдун" target="привидение" weight="0.512082733987" />
-      <edge id="49" source="колдун" target="оборотень" weight="0.571711130892" />
-      <edge id="50" source="колдун" target="вурдалак" weight="0.513380168889" />
-      <edge id="51" source="оборотень" target="привидение" weight="0.516862139209" />
-      <edge id="52" source="оборотень" target="вурдалак" weight="0.539302448826" />
-      <edge id="53" source="водяной" target="дьяволица" weight="0.514299604518" />
-      <edge id="54" source="привидение" target="призрак" weight="0.705558531149" />
-      <edge id="55" source="серафим" target="ангел" weight="0.652725949163" />
-      <edge id="56" source="гном" target="эльф" weight="0.563259649814" />
-      <edge id="57" source="ангел" target="дьяволица" weight="0.507450409278" />
-      <edge id="58" source="чертенок" target="дьяволица" weight="0.548083899712" />
-      <edge id="59" source="дьяволица" target="вурдалак" weight="0.534215964975" />
-      <edge id="60" source="вурдалак" target="вампир" weight="0.563271293229" />
+      <edge id="0" source="оборотень" target="привидение" weight="0.516862139209" />
+      <edge id="1" source="оборотень" target="демон" weight="0.502181472156" />
+      <edge id="2" source="оборотень" target="колдун" weight="0.571711130892" />
+      <edge id="3" source="оборотень" target="вурдалак" weight="0.539302448826" />
+      <edge id="4" source="оборотень" target="упырь" weight="0.521796383025" />
+      <edge id="5" source="оборотень" target="ведьма" weight="0.540269717164" />
+      <edge id="6" source="гном" target="эльф" weight="0.563259649814" />
+      <edge id="7" source="эльф" target="фея" weight="0.611393952458" />
+      <edge id="8" source="эльф" target="гоблин" weight="0.535286039254" />
+      <edge id="9" source="колдун" target="привидение" weight="0.512082733987" />
+      <edge id="10" source="колдун" target="дьявол" weight="0.517261201714" />
+      <edge id="11" source="колдун" target="кикимора" weight="0.505274798339" />
+      <edge id="12" source="колдун" target="демон" weight="0.51147440368" />
+      <edge id="13" source="колдун" target="леший" weight="0.539302018458" />
+      <edge id="14" source="колдун" target="вурдалак" weight="0.513380168889" />
+      <edge id="15" source="колдун" target="ведьма" weight="0.672205785991" />
+      <edge id="16" source="леший" target="привидение" weight="0.542685294236" />
+      <edge id="17" source="леший" target="кикимора" weight="0.55197367868" />
+      <edge id="18" source="леший" target="русалка" weight="0.574191801697" />
+      <edge id="19" source="леший" target="водяной" weight="0.532187377614" />
+      <edge id="20" source="леший" target="ведьма" weight="0.501267969717" />
+      <edge id="21" source="божество" target="тварь" weight="0.50511881199" />
+      <edge id="22" source="божество" target="бог" weight="0.633046769162" />
+      <edge id="23" source="божество" target="существо" weight="0.518559718776" />
+      <edge id="24" source="призрак" target="привидение" weight="0.705558531149" />
+      <edge id="25" source="зомби" target="вурдалак" weight="0.51038581935" />
+      <edge id="26" source="зомби" target="вампир" weight="0.551754506283" />
+      <edge id="27" source="вампир" target="вурдалак" weight="0.563271293229" />
+      <edge id="28" source="вампир" target="упырь" weight="0.525715887114" />
+      <edge id="29" source="единорог" target="дракон" weight="0.51971851638" />
+      <edge id="30" source="орк" target="гоблин" weight="0.528703281708" />
+      <edge id="31" source="русалка" target="ведьма" weight="0.51882829386" />
+      <edge id="32" source="вурдалак" target="гоблин" weight="0.512230321993" />
+      <edge id="33" source="вурдалак" target="упырь" weight="0.620445008348" />
+      <edge id="34" source="вурдалак" target="дьяволица" weight="0.534215964975" />
+      <edge id="35" source="вурдалак" target="ведьма" weight="0.524246224909" />
+      <edge id="36" source="водяной" target="дьяволица" weight="0.514299604518" />
+      <edge id="37" source="водяной" target="кикимора" weight="0.53442101508" />
+      <edge id="38" source="ведьма" target="привидение" weight="0.51704438039" />
+      <edge id="39" source="ведьма" target="дьявол" weight="0.541767733224" />
+      <edge id="40" source="ведьма" target="кикимора" weight="0.571160009159" />
+      <edge id="41" source="ведьма" target="демон" weight="0.509264501017" />
+      <edge id="42" source="ведьма" target="дьяволица" weight="0.554343908379" />
+      <edge id="43" source="дьявол" target="черт" weight="0.58422307417" />
+      <edge id="44" source="дьявол" target="ангел" weight="0.542488445141" />
+      <edge id="45" source="дьявол" target="бес" weight="0.668134378752" />
+      <edge id="46" source="дьявол" target="кикимора" weight="0.500116114157" />
+      <edge id="47" source="дьявол" target="демон" weight="0.667390294722" />
+      <edge id="48" source="дьявол" target="дьяволица" weight="0.613888283469" />
+      <edge id="49" source="бес" target="демон" weight="0.645017585552" />
+      <edge id="50" source="бес" target="ангел" weight="0.522231361879" />
+      <edge id="51" source="бес" target="дьяволица" weight="0.500742027685" />
+      <edge id="52" source="чертенок" target="дьяволица" weight="0.548083899712" />
+      <edge id="53" source="чертенок" target="кикимора" weight="0.555720695934" />
+      <edge id="54" source="демон" target="ангел" weight="0.58600063525" />
+      <edge id="55" source="демон" target="дьяволица" weight="0.511176040992" />
+      <edge id="56" source="кикимора" target="дьяволица" weight="0.553747442496" />
+      <edge id="57" source="упырь" target="гоблин" weight="0.536760611811" />
+      <edge id="58" source="тварь" target="существо" weight="0.63481571388" />
+      <edge id="59" source="ангел" target="дьяволица" weight="0.507450409278" />
+      <edge id="60" source="ангел" target="серафим" weight="0.652725949163" />
     </edges>
   </graph>
 </gexf>
