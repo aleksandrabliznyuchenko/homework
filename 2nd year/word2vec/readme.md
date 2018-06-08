@@ -2,6 +2,12 @@
 
 Картиночки:
 
-supernatural_matplotlib -- некрасивая картинка из matplotlib
+supernatural_graph_matplotlib.png -- некрасивая картинка из matplotlib
 
-supernatural_gephi -- более осмысленная картинка из Gephi
+supernatural_graph_gephi.png -- более осмысленная картинка из Gephi
+
+Файлы:
+
+supernatural.gexf -- файл с параметрами узлов и рёбер
+
+supernatural.gephi -- готовый красивый (надеюсь) граф из Gephi
