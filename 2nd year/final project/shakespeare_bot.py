@@ -86,7 +86,7 @@ bot.set_webhook(url= 'https://talk-like-shakespeare.herokuapp.com/bot')
 
 app = flask.Flask(__name__)
 
-# риветственное сообщение бота
+# приветственное сообщение бота
 @bot.message_handler(commands = ['start', 'help'])
 def send_welcome(message):
     bot.send_message(message.chat.id, 'Hey there! Write me something new and I will respond in a Shakespearen way.')
