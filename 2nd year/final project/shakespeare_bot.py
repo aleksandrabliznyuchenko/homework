@@ -5,6 +5,7 @@ import re
 import telebot
 import conf
 
+
 # марковская модель
 def gen_lines(corpus):
     with open(corpus, 'r', encoding = 'utf-8') as data:
