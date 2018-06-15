@@ -81,6 +81,7 @@ def unirand(seq):
         if rnd < freq_:
             return token
 
+        
 #тренировка модели
 model = train(shakespeare.txt)
 # или model = train('/home/Ilma/shakespearean/shakespeare.txt') для кода, лежащего на pythonanywhere
