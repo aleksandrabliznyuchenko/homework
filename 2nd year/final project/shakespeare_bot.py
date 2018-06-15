@@ -81,7 +81,8 @@ def unirand(seq):
             return token
 
 #тренировка модели
-model = train('/home/Ilma/shakespearean/shakespeare.txt')
+model = train(shakespeare.txt)
+# или model = train('/home/Ilma/shakespearean/shakespeare.txt') для кода, лежащего на pythonanywhere
 
 
 
@@ -117,7 +118,7 @@ def send_shakespeare(message):
 def index():
     return 'ok'
 
-# страница бота
+# функция, запускающаяся, когда к нам обращается Telegram
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def webhook():
     if flask.request.headers.get('content-type') == 'application/json':
