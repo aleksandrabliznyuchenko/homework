@@ -114,6 +114,9 @@ def send_shakespeare(message):
     except KeyError:
         shakespeare = generate_sentence(model, '')
         bot.send_message(message.chat.id, shakespeare)
+# кажется, приложение на pythonanywhere необходимо обновлять каждый раз, когда мы хотим нормально поговорить с ботом
+# в противном случае он будет просто генерировать рандомные шекспировские фразы без учета последнего слова,
+# введенного пользователем
 
 # главная страница проверки, что в целом все загружено
 @app.route('/', methods=['GET', 'HEAD'])
@@ -133,4 +136,4 @@ def webhook():
 
 
 if __name__ == '__main__':
-    bot.polling(none_stop=True)
+    bot.polling(none_stop = True)
