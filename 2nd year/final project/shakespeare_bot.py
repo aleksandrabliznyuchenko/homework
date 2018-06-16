@@ -1,10 +1,12 @@
 from collections import defaultdict
 from random import uniform
+from pymorphy2 import MorphAnalyzer
 import flask
 import re
 import telebot
 import conf
 
+morph = MorphAnalyzer()
 
 # марковская модель
 def gen_lines(corpus):
@@ -105,15 +107,25 @@ def send_welcome(message):
     bot.send_message(message.chat.id, 'Hey there! Write me something new and I will respond in a Shakespearean way.')
 
 # выдача строки в шекспировском стиле после того, как нам что-то напишут
+# начало фразы, выдаваемой ботом = последнее слово введенного пользователем сообщения
+# сначала пытаемся построить высказывание, невзирая на форму слова
+# если не получается, пытаемся построить фразу на основании леммы последнего введенного слова
+# в случае провала строим рандомное высказывание
 @bot.message_handler(func = lambda m: True)
 def send_shakespeare(message):
     words = message.text.split()
+    ana = morph.parse(words[-1].strip('.,!?:;'))[-1]
     try:
         shakespeare = generate_sentence(model, words[-1].strip('.,!?:;'))
         bot.send_message(message.chat.id, shakespeare)
     except KeyError:
-        shakespeare = generate_sentence(model, '')
-        bot.send_message(message.chat.id, shakespeare)
+        try:
+            shakespeare = generate_sentence(model, ana.normal_form)
+            bot.send_message(message.chat.id, shakespeare)
+        except KeyError:
+            shakespeare = generate_sentence(model, '')
+            bot.send_message(message.chat.id, shakespeare)
+            
 # кажется, приложение на pythonanywhere необходимо обновлять каждый раз, когда мы хотим нормально поговорить с ботом
 # в противном случае он будет просто генерировать рандомные шекспировские фразы без учета последнего слова,
 # введенного пользователем
