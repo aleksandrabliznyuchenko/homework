@@ -1,39 +1,1460 @@
 {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#c65102",
-        "marker-size": "medium",
-        "marker-symbol": "circle-stroked",
-        "Label": "Harlem; resolving the murder of 3 MI6 agents",
-        "Movie": "Live and Let Die"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.9464769,
-          40.81155039999999
-        ]
-      }
-    },
+  "type": "FeatureCollection",
+  "features": [
     {
-      "type": "Feature",
-      "properties": {
-        "stroke": "#c65102",
-        "stroke-width": 2,
-        "stroke-opacity": 1,
-        "Movie": "Live and Let Die"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -0.124722,
-          51.487778
-          ],
-          [
-            -73.9464769,
-          40.81155039999999
-          ]
-        ]
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#f00000",
+            "marker-size": "large",
+            "marker-symbol": "star",
+            "Label": "MI6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -0.124722,
+              51.487778
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#6c3461",
+            "marker-size": "medium",
+            "marker-symbol": "danger",
+            "Label": "Portugal",
+            "Movie": "On Her Majesty's Secret Service"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -18.805152500000005,
+              36.29364500905211
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#960056",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "On Her Majesty's Secret Service"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -18.805152500000005,
+                36.29364500905211
+              ],
+              [
+              -0.124722,
+              51.487778
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#6c3461",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Swiss Alps",
+            "Movie": "On Her Majesty's Service"
+          },
+          "geometry": {
+          "type": "Point",
+            "coordinates": [
+            8.224040499999981,
+            46.822399620407666
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#960056",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "On Her Majesty's Service"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -18.805152500000005,
+                36.29364500905211
+              ],
+              [
+              8.224040499999981,
+              46.822399620407666
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#6c3461",
+            "marker-size": "medium",
+            "marker-symbol": "rail",
+            "Label": "Lauterbrunnen",
+            "Movie": "On Her Majesty's Service"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              7.907348499999952,
+              46.595517661638006
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#960056",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "On Her Majesty's Service"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                8.224040499999981,
+                46.822399620407666
+              ],
+              [
+                7.907348499999952,
+                46.595517661638006
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#960056",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "On Her Majesty's Service"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                7.907348499999952,
+                46.595517661638006
+              ],
+              [
+                -0.124722,
+                51.487778
+              ]
+            ]
+          }
+        },
+        
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#2c6fbb",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Los Angeles",
+            "Movie": "Diamonds Are Forever"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+            -118.40876600000001,
+            33.943593424009265
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#0652ff",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Diamonds Are Forever"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+              -0.124722,
+              51.487778
+              ],
+              [
+              -118.40876600000001,
+              33.943593424009265
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#2c6fbb",
+            "marker-size": "medium",
+            "marker-symbol": "car",
+            "Label": "Las Vegas",
+            "Movie": "Diamonds Are Forever"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+            -115.22253999999998,
+            36.23377600289263
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#0652ff",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Diamonds Are Forever"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+              -118.40876600000001,
+              33.943593424009265
+              ],
+              [
+              -115.22253999999998,
+              36.23377600289263
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#2c6fbb",
+            "marker-size": "medium",
+            "marker-symbol": "danger",
+            "Label": "Baja California",
+            "Movie": "Diamonds Are Forever"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+            -115.35063549999998,
+            30.328336322124382
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#0652ff",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Diamonds Are Forever"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+              -115.22253999999998,
+              36.23377600289263
+              ],
+              [
+              -115.35063549999998,
+              30.328336322124382
+              ]
+            ]
+          }
+        },
+        
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#fdaa48",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Harlem; resolving 3 MI6 agents' murder",
+            "Movie": "Live and Let Die"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -73.9464769,
+              40.81155039999999
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#c65102",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Live and Let Die"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -0.124722,
+                51.487778
+              ],
+              [
+                -73.9464769,
+                40.81155039999999
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#fdaa48",
+            "marker-size": "medium",
+            "marker-symbol": "danger",
+            "Label": "Carribean",
+            "Movie": "Live and Let Die"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -77.348433,
+              18.119778 
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#c65102",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Live and Let Die"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -73.9464769,
+                40.81155039999999
+              ],
+              [
+                -77.348433,
+                18.119778
+              ]
+            ]
+          }
+        },
+        
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#fac205",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Beirut",
+            "Movie": "The Man with the Golden Gun"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              35.50177669999994,
+              33.8937913 
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#dbb40c",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "The Man with the Golden Gun"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -0.124722,
+                51.487778
+              ],
+              [
+                35.50177669999994,
+                33.8937913 
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#fac205",
+            "marker-size": "medium",
+            "marker-symbol": "restaurant",
+            "Label": "Hong Kong; Peninsula Hotel",
+            "Movie": "The Man with the Golden Gun"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              114.03344499999983,
+              22.088119090937706 
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#dbb40c",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "The Man with the Golden Gun"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                35.50177669999994,
+                33.8937913 
+              ],
+              [
+                114.03344499999983,
+                22.088119090937706 
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#fac205",
+            "marker-size": "medium",
+            "marker-symbol": "danger",
+            "Label": "Thailand",
+            "Movie": "The Man with the Golden Gun"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              113.918481,
+              22.308047
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#fac205",
+            "marker-size": "medium",
+            "marker-symbol": "danger",
+            "Label": "Scaramanga's Island",
+            "Movie": "The Man with the Golden Gun"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              100.55847299999989,
+              13.758949689366053
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#dbb40c",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "The Man with the Golden Gun"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                113.918481,
+                22.308047
+              ],
+              [
+                100.55847299999989,
+                13.758949689366053
+              ]
+            ]
+          }
+        },
+    
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#ff474c",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Austria, Vienna",
+            "Movie": "The Spy Who Loved Me"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              16.559543999999967,
+              48.10382253798062
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#f4320c",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "The Spy Who Loved Me"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -0.124722,
+                51.487778
+              ],
+              [
+                16.559543999999967,
+                48.10382253798062
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#ff474c",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Egypt",
+            "Movie": "The Spy Who Loved Me"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              31.41318699999996,
+              30.114082207171744 
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#f4320c",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "The Spy Who Loved Me"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                16.559543999999967,
+                48.10382253798062
+              ],
+              [
+                31.41318699999996,
+                30.114082207171744 
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#ff474c",
+            "marker-size": "medium",
+            "marker-symbol": "danger",
+            "Label": "Sardinia; Stromberg's base",
+            "Movie": "The Spy Who Loved Me"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              9.041313999999952,
+              39.42216476186325
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#f4320c",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "The Spy Who Loved Me"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                31.41318699999996,
+                30.114082207171744
+              ],
+              [
+                9.041313999999952,
+                39.42216476186325
+              ]
+            ]
+          }
+        },
+        
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#5b7c99",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "California",
+            "Movie": "Moonraker"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -119.3200075,
+              37.422909467639606 
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#047495",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Moonraker"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -0.124722,
+                51.487778
+              ],
+              [
+                -119.3200075,
+                37.422909467639606
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#5b7c99",
+            "marker-size": "medium",
+            "marker-symbol": "danger",
+            "Label": "Venice; Bond's being chased",
+            "Movie": "Moonraker"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              12.338445999999932,
+              45.43697585375198
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#047495",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Moonraker"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -119.3200075,
+                37.422909467639606
+              ],
+              [
+                12.338445999999932,
+                45.43697585375198
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#5b7c99",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Rio-de-Janeiro",
+            "Movie": "Moonraker"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -43.416121000000004,
+              -22.784180286078755
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#047495",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Moonraker"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                12.338445999999932,
+                45.43697585375198
+              ],
+              [
+                -43.416121000000004,
+                -22.784180286078755
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#5b7c99",
+            "marker-size": "medium",
+            "marker-symbol": "rocket",
+            "Label": "Amazon River; Drax's space station",
+            "Movie": "Moonraker"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -54.66546299999998,
+              -1.1251750755191832 
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#047495",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Moonraker"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -43.416121000000004,
+                -22.784180286078755
+              ],
+              [
+                -54.66546299999998,
+                -1.1251750755191832
+              ]
+            ]
+          }
+        },
+        
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#658b38",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Greece; Gonzales' villa",
+            "Movie": "For your Eyes Only"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              24.41575149999999,
+              38.26622138170388 
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#0a481e",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "For Your Eyes Only"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -0.124722,
+                51.487778
+              ],
+              [
+                24.41575149999999,
+                38.26622138170388 
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#658b38",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Cortina",
+            "Movie": "For Your Eyes Only"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              9.924254499999984,
+              44.87299520648838
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#0a481e",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "For Your Eyes Only"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                24.41575149999999,
+                38.26622138170388 
+              ],
+              [
+                9.924254499999984,
+                44.87299520648838
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#658b38",
+            "marker-size": "medium",
+            "marker-symbol": "ferry",
+            "Label": "Corfu",
+            "Movie": "For Your Eyes Only"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              19.90751999999995,
+              39.61343683669999
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#0a481e",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "For Your Eyes Only"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                9.924254499999984,
+                44.87299520648838
+              ],
+              [
+                19.90751999999995,
+                39.61343683669999
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#658b38",
+            "marker-size": "medium",
+            "marker-symbol": "danger",
+            "Label": "Albania",
+            "Movie": "For Your Eyes Only"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              20.084249999999983,
+              41.170219596015535
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#0a481e",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "For Your Eyes Only"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                20.084249999999983,
+                41.170219596015535
+              ],
+              [
+                19.90751999999995,
+                39.61343683669999
+              ]
+            ]
+          }
+        },
+    
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#856798",
+            "marker-size": "medium",
+            "marker-symbol": "star-stroked",
+            "Label": "Rajasthan",
+            "Movie": "Octopussy"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              73.45933699999996,
+              29.392255041459855
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#856798",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Octopussy"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -0.124722,
+                51.487778
+              ],
+              [
+                73.45933699999996,
+                29.392255041459855
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#bc13fe",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Udaipur",
+            "Movie": "Octopussy"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              74.57479749999999,
+              26.14627076980579
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#856798",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Octopussy"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                73.45933699999996,
+                29.392255041459855
+              ],
+              [
+                74.57479749999999,
+                26.14627076980579
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#bc13fe",
+            "marker-size": "medium",
+            "marker-symbol": "rail",
+            "Label": "Karl-Marx-Stadt",
+            "Movie": "Octopussy"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              13.869547499999957,
+              51.560368147442155
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#856798",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Octopussy"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                74.57479749999999,
+                26.14627076980579
+              ],
+              [
+                13.869547499999957,
+                51.560368147442155
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#856798",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Octopussy"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                13.869547499999957,
+                51.560368147442155
+              ],
+              [
+                73.45933699999996,
+                29.392255041459855
+              ]
+            ]
+          }
+        },
+    
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#c9ff27",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Siberia",
+            "Movie": "A View to a Kill"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              96.25157250000001,
+              70.88695168171022
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#76cd26",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "A View to a Kill"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -0.124722,
+                51.487778
+              ],
+              [
+                96.25157250000001,
+                70.88695168171022
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#c9ff27",
+            "marker-size": "medium",
+            "marker-symbol": "restaurant",
+            "Label": "Eiphel Tower",
+            "Movie": "A View to a Kill"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              2.2977334999999663,
+              48.85615864735356
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#76cd26",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "A View to a Kill"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                96.25157250000001,
+                70.88695168171022
+              ],
+              [
+                2.2977334999999663,
+                48.85615864735356
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#c9ff27",
+            "marker-size": "medium",
+            "marker-symbol": "museum",
+            "Label": "San-Francisco City Hall",
+            "Movie": "A View to a Kill"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -122.43597600000001,
+              37.759336121733426
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#76cd26",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "A View to a Kill"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -122.43597600000001,
+                37.759336121733426
+              ],
+              [
+                2.2977334999999663,
+                48.85615864735356
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#c9ff27",
+            "marker-size": "medium",
+            "marker-symbol": "danger",
+            "Label": "Golden Gate Bridge",
+            "Movie": "A View to a Kill"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -122.47804399999997,
+              37.81829022281516
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#76cd26",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "A View to a Kill"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -122.43597600000001,
+                37.759336121733426
+              ],
+              [
+                -122.47804399999997,
+                37.81829022281516
+              ]
+            ]
+          }
+        },
+    
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#028f1e",
+            "marker-size": "medium",
+            "marker-symbol": "star-stroked",
+            "Label": "Bratislava",
+            "Movie": "The Living Daylights"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              17.098272499999982,
+              48.16116378090387
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#39ad48",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Tangier",
+            "Movie": "The Living Daylights"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -5.818586000000001,
+              35.76103141467243
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#028f1e",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "The Living Daylights"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                17.098272499999982,
+                48.16116378090387
+              ],
+              [
+                -5.818586000000001,
+                35.76103141467243
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#028f1e",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "The Living Daylights"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                17.098272499999982,
+                48.16116378090387
+              ],
+              [
+                16.559543999999967,
+                48.10382253798062
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#028f1e",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "The Living Daylights"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                16.559543999999967,
+                48.10382253798062
+              ],
+              [
+                -5.818586000000001,
+                35.76103141467243
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#39ad48",
+            "marker-size": "medium",
+            "marker-symbol": "airport",
+            "Label": "Afganistan",
+            "Movie": "The Living Daylights"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              67.67899749999998,
+              34.053702042350636
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#028f1e",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "The Living Daylights"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -5.818586000000001,
+                35.76103141467243
+              ],
+              [
+                67.67899749999998,
+                34.053702042350636
+              ]
+            ]
+          }
+        },
+    
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#436bad",
+            "marker-size": "medium",
+            "marker-symbol": "star-stroked",
+            "Label": "Key West",
+            "Movie": "Licence to Kill"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -81.72823500000003,
+              24.579149043634274
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#7bf2da",
+            "marker-size": "medium",
+            "marker-symbol": "ferry",
+            "Label": "Bimini",
+            "Movie": "Licence to Kill"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -79.870285,
+              24.648281099304644
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#436bad",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Licence to Kill"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -81.72823500000003,
+                24.579149043634274
+              ],
+              [
+                -79.870285,
+                24.648281099304644
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "marker-color": "#7bf2da",
+            "marker-size": "medium",
+            "marker-symbol": "danger",
+            "Label": "Republic of Isthmus (fictional country)",
+            "Movie": "Licence to Kill"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -99.99376699999999,
+              40.51712752621174
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stroke": "#436bad",
+            "stroke-width": 2,
+            "stroke-opacity": 1,
+            "Movie": "Licence to Kill"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -79.870285,
+                24.648281099304644
+              ],
+              [
+                -99.99376699999999,
+                40.51712752621174
+              ]
+            ]
+        }
       }
-    },
+  ]
+}
