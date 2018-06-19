@@ -1,0 +1,39 @@
+{
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#c65102",
+        "marker-size": "medium",
+        "marker-symbol": "circle-stroked",
+        "Label": "Harlem; resolving the murder of 3 MI6 agents",
+        "Movie": "Live and Let Die"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9464769,
+          40.81155039999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#c65102",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "Movie": "Live and Let Die"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.124722,
+          51.487778
+          ],
+          [
+            -73.9464769,
+          40.81155039999999
+          ]
+        ]
+      }
+    },
