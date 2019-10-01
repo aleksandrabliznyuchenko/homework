@@ -7,9 +7,10 @@ define BackVowel a | o | u ;
 define Vowel FrontVowel | NeutralVowel | BackVowel | A | E;
 define Letter Vowel | Consonant;
 
-# определяем финские падежи
+# определяем финские падежи и числа (мы будем прибавлять к основе эти показатели каждый раз, когда будем маркировать какой-то падеж/число, а затем будем заменять показатели на нужные нам суффиксы/окончания в зависимости от падежа/числа)
 
-define Case "+Nom" | "+Gen" | "+Part" | "+In" | "+All" ;
+# здесь изначально была ошибка -- вместо адэссива стоял аллатив
+define Case "+Nom" | "+Gen" | "+Part" | "+In" | "+Ad" | "+Il" | "+All" | "+El" | "+Abl";
 define Number "+Sg" | "+Pl" ; 
 
 # определяем основы переднего ряда (те, в которых встречаются передние (FrontVowel) и нейтральные (NeutralVowel) гласные)
@@ -21,13 +22,14 @@ define Stem Letter+;
 
 define Input Stem Number Case;
 
-# к существительным во множественном числе Номинатива добавляется окончание -t, после него могут идти падежные окончания
+# к существительным во множественном числе Номинатива добавляется окончание "^" t (все "^" мы убираем в самом конце, ими мы отделяем добавленные показатели)
+# к существительным в единственном числе Номинатива просто прибавляется "^" (то есть по сути не прибаляется показателя)
 
 define NomPl "+Pl" "+Nom" -> "^" t || _ ;
 define NomSg "+Sg" "+Nom" -> "^" || _ ;
 define Nominatives NomPl .o. NomSg ;
 
-# в генитиве к основе, оканчивающейся двумя гласными, прибавляется показатель -den
+# в генитиве множественного числа к основе, оканчивающейся двумя гласными, прибавляется показатель -den
 # к остальным основам в генитиве прибавляется показатель -en
 
 define GenDen "+Gen" -> d e n || Vowel Vowel "+Pl" _ ;
@@ -36,12 +38,15 @@ define Genetive GenDen .o. Gen ;
 
 # показатель партитива -ta прибавляется к основам на две гласные, либо согласные
 # к остальным основам в партитиве прибавляется показатель -a
-# в инессиве и аллативе к основам прибавляются показатели -ssa и -lla соответственно
+# в инессиве и адэссиве к основам прибавляются показатели -ssa и -lla соответственно
+#
+# в элативе и аблативе к основам прибавляются показатели -sta и -lta соответственно
 
 define PartTa "+Part" -> t A || [ Consonant Vowel Vowel | Consonant ] Number _ ;
 define PartA "+Part" -> A || _ ;
 
-define LocativeCases "+In" -> s s A , "+All" -> l l A || _ ;
+# здесь изначально была ошибка -- вместо адэссива стоял аллатив
+define LocativeCases "+In" -> s s A , "+Ad" -> l l A , "+All" -> l l E , "+El" -> s t A , "+Abl" -> l t A  || _ ;
 
 define OtherCases PartTa .o. PartA .o. LocativeCases ;
 
@@ -63,13 +68,27 @@ define Pl "+Pl" -> "^" i || _ ;
 define NumberInfl Sg .o. OmitA .o. Ai2i .o. Ai2Oi .o. OmitFirst .o. Pl ;
 
 # -i переходит в -j, если оказывается между двумя любыми гласными
+#
+#
+
 define JotPl i -> j || Vowel "^"* _ "^"* Vowel ;
 define HarmonyBack A -> a || BackStem "^" Letter* _;
 define HarmonyFront A -> ä || FrontStem "^" Letter* _;
 
 define Phonetics JotPl .o. HarmonyBack .o. HarmonyFront ;
 
-# ?
+# двойные согласные p | t | k последнего слога основы переходят в одинарные, если идут перед сочетанием "гласный + согласный", т.е. если следующий слог закрытый
+# одинарная -р переходит в -v в последнем слоге основы, если следующий слог закрытый
+# одинарная -t переходит в -d в последнем слоге основы, если следующий слог закрытый
+# одинарная -k опускается в последнем слоге основы, если следующий слог закрытый
+
+# в последнем слоге основы сочетание -mp переходит в -mm, сочетание -nt в -nn, -nk в -ng, -lt в -ll, а -rt в -rr, если следующий слог закрытый
+# в последнем слоге основы сочетание -lke переходит в -lje, сочетание -rke в -rje, -hke в -hje, а -uku в -uvu, если следующий слог закрытый
+
+# в последнем слоге основы сочетание -in переходит в -im, а -tön в -ttöm, если следующий слог начинается с гласного
+#
+#
+
 define DoublePTK p p -> p , t t -> t , k k -> k || Letter _ "^"* Vowel "^"* Consonant [ .#. | Consonant ] ;
 define SingleP p -> v || Vowel _ "^"* Vowel "^"* Consonant [ .#. | Consonant ] ;
 define SingleTK t -> d , k -> 0 || Letter _ "^"* Vowel "^"* Consonant [ .#. | Consonant ] ; 
@@ -81,12 +100,15 @@ define EReal E -> e || _;
 
 define Alternations N2M  .o. EOmit .o. EReal .o. ThreeLetter .o. TwoLetter .o. SingleP .o. SingleTK .o. DoublePTK ;
 
-# ?
+# задаем порядок применения правил склонения существительных по падежам
+
 define Affixes Nominatives .o. Genetive .o. OtherCases .o. NumberInfl .o. Alternations .o. Phonetics;
 
-# ?
+# убираем все "^"
 #define Cleanup "^" -> 0 || _ ;
 
-# ?
-define Grammar Input .o. Affixes .o. Cleanup ;
+# для каждого слова определяем, показатели какого числа и какого падежа мы будем прибавлять к основе -- прибавляем нужные аффиксы -- проводим чистку, т.е. убираем "^"
+
+#define Grammar Input .o. Affixes .o. Cleanup ;
+define Grammar Input .o. Affixes;
 push Grammar
