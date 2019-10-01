@@ -1,4 +1,5 @@
 # определяем набор букв и звуков для финского
+
 define Consonant b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ;
 define FrontVowel ä | ö | y ;
 define NeutralVowel e | i ;
@@ -7,28 +8,36 @@ define Vowel FrontVowel | NeutralVowel | BackVowel | A | E;
 define Letter Vowel | Consonant;
 
 # определяем финские падежи
+
 define Case "+Nom" | "+Gen" | "+Part" | "+In" | "+All" ;
 define Number "+Sg" | "+Pl" ; 
 
 # определяем основы переднего ряда (те, в которых встречаются передние (FrontVowel) и нейтральные (NeutralVowel) гласные)
 # и основы заднего ряда (те основы, в которых встречаются задние (BackVowel) и нейтральные (NeutralVowel) гласные)
+
 define FrontStem [Consonant* [ FrontVowel | NeutralVowel ] ]+ Consonant*;
 define BackStem [Consonant* [ BackVowel | NeutralVowel ] ]* [Consonant* BackVowel] [Consonant* [ BackVowel | NeutralVowel ] ]* Consonant*;
 define Stem Letter+;
 
 define Input Stem Number Case;
 
-# к существительным во множественном числе Номинатива добавляется окончание -t
+# к существительным во множественном числе Номинатива добавляется окончание -t, после него могут идти падежные окончания
+
 define NomPl "+Pl" "+Nom" -> "^" t || _ ;
 define NomSg "+Sg" "+Nom" -> "^" || _ ;
 define Nominatives NomPl .o. NomSg ;
 
-# ?
+# в генитиве к основе, оканчивающейся двумя гласными, прибавляется показатель -den
+# к остальным основам в генитиве прибавляется показатель -en
+
 define GenDen "+Gen" -> d e n || Vowel Vowel "+Pl" _ ;
 define Gen "+Gen" -> E n || _ ;
 define Genetive GenDen .o. Gen ;
 
-# ?
+# показатель партитива -ta прибавляется к основам на две гласные, либо согласные
+# к остальным основам в партитиве прибавляется показатель -a
+# в инессиве и аллативе к основам прибавляются показатели -ssa и -lla соответственно
+
 define PartTa "+Part" -> t A || [ Consonant Vowel Vowel | Consonant ] Number _ ;
 define PartA "+Part" -> A || _ ;
 
@@ -36,7 +45,14 @@ define LocativeCases "+In" -> s s A , "+All" -> l l A || _ ;
 
 define OtherCases PartTa .o. PartA .o. LocativeCases ;
 
-# ?
+# чередования основ во множественном числе
+# "+Sg" становится "^"
+# -ä и -i опускаются перед показателями множ. числа
+# -а переходит в -о, если двусложная основа оканчивается на эти гласные, а первый гласный основы - a | e | i
+# -а опускается, если двусложная основа оканчивается этой буквой, а первый гласный основы - o | u
+# 
+# "+Pl" становится "^" i
+
 define Sg "+Sg" -> "^" || _ ;
 define OmitA ä -> 0, i -> 0 || _ "+Pl";
 define Ai2Oi a -> o || [ a | e | i ] Vowel* Consonant+ _ "+Pl";
@@ -46,7 +62,7 @@ define Pl "+Pl" -> "^" i || _ ;
 
 define NumberInfl Sg .o. OmitA .o. Ai2i .o. Ai2Oi .o. OmitFirst .o. Pl ;
 
-# ?
+# -i переходит в -j, если оказывается между двумя любыми гласными
 define JotPl i -> j || Vowel "^"* _ "^"* Vowel ;
 define HarmonyBack A -> a || BackStem "^" Letter* _;
 define HarmonyFront A -> ä || FrontStem "^" Letter* _;
@@ -69,7 +85,7 @@ define Alternations N2M  .o. EOmit .o. EReal .o. ThreeLetter .o. TwoLetter .o. S
 define Affixes Nominatives .o. Genetive .o. OtherCases .o. NumberInfl .o. Alternations .o. Phonetics;
 
 # ?
-define Cleanup "^" -> 0 || _ ;
+#define Cleanup "^" -> 0 || _ ;
 
 # ?
 define Grammar Input .o. Affixes .o. Cleanup ;
