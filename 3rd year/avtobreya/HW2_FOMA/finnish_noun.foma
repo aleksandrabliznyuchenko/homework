@@ -1,4 +1,4 @@
-# ?
+# определяем набор букв и звуков для финского
 define Consonant b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ;
 define FrontVowel ä | ö | y ;
 define NeutralVowel e | i ;
@@ -6,7 +6,7 @@ define BackVowel a | o | u ;
 define Vowel FrontVowel | NeutralVowel | BackVowel | A | E;
 define Letter Vowel | Consonant;
 
-# ?
+# определяем финские падежи
 define Case "+Nom" | "+Gen" | "+Part" | "+In" | "+All" ;
 define Number "+Sg" | "+Pl" ; 
 
