@@ -10,14 +10,15 @@ define Letter Vowel | Consonant;
 define Case "+Nom" | "+Gen" | "+Part" | "+In" | "+All" ;
 define Number "+Sg" | "+Pl" ; 
 
-# ?
+# определяем основы переднего ряда (те, в которых встречаются передние (FrontVowel) и нейтральные (NeutralVowel) гласные)
+# и основы заднего ряда (те основы, в которых встречаются задние (BackVowel) и нейтральные (NeutralVowel) гласные)
 define FrontStem [Consonant* [ FrontVowel | NeutralVowel ] ]+ Consonant*;
 define BackStem [Consonant* [ BackVowel | NeutralVowel ] ]* [Consonant* BackVowel] [Consonant* [ BackVowel | NeutralVowel ] ]* Consonant*;
 define Stem Letter+;
 
 define Input Stem Number Case;
 
-# ?
+# к существительным во множественном числе Номинатива добавляется окончание -t
 define NomPl "+Pl" "+Nom" -> "^" t || _ ;
 define NomSg "+Sg" "+Nom" -> "^" || _ ;
 define Nominatives NomPl .o. NomSg ;
