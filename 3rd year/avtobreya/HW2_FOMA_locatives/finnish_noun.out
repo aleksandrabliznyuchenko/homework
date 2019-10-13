@@ -1,0 +1,344 @@
+talo+Sg+Nom	talo
+
+talo+Pl+Nom	talot
+
+talo+Sg+Gen	talon
+
+talo+Pl+Gen	talojen
+
+talo+Sg+Part	taloa
+
+talo+Pl+Part	taloja
+
+talo+Sg+In	talossa
+
+talo+Pl+In	taloissa
+
+talo+Sg+Ad	talolla
+
+talo+Pl+Ad	taloilla
+
+talo+Sg+Ill	taloon
+
+talo+Pl+Ill	taloihin
+
+talo+Sg+All	talolle
+
+talo+Pl+All	taloille
+
+talo+Sg+El	talosta
+
+talo+Pl+El	taloista
+
+talo+Sg+Abl	talolta
+
+talo+Pl+Abl	taloilta
+
+	+?
+
+tyttö+Sg+Nom	tyttö
+
+tyttö+Pl+Nom	tytöt
+
+tyttö+Sg+Gen	tytön
+
+tyttö+Pl+Gen	tyttöjen
+
+tyttö+Sg+Part	tyttöä
+
+tyttö+Pl+Part	tyttöjä
+
+tyttö+Sg+In	tytössä
+
+tyttö+Pl+In	tytöissä
+
+tyttö+Sg+Ad	tytöllä
+
+tyttö+Pl+Ad	tytöillä
+
+tyttö+Sg+Ill	tytöön
+
+tyttö+Pl+Ill	tyttöihin
+
+tyttö+Sg+All	tytölle
+
+tyttö+Pl+All	tytöille
+
+tyttö+Sg+El	tytöstä
+
+tyttö+Pl+El	tytöistä
+
+tyttö+Sg+Abl	tytöltä
+
+tyttö+Pl+Abl	tytöiltä
+
+	+?
+
+elämä+Sg+Nom	elämä
+
+elämä+Pl+Nom	elämät
+
+elämä+Sg+Gen	elämän
+
+elämä+Pl+Gen	elämien
+
+elämä+Sg+Part	elämää
+
+elämä+Pl+Part	elämiä
+
+elämä+Sg+In	elämässä
+
+elämä+Pl+In	elämissä
+
+elämä+Sg+Ad	elämällä
+
+elämä+Pl+Ad	elämillä
+
+elämä+Sg+Ill	elämään
+
+elämä+Pl+Ill	elämihin
+
+elämä+Sg+All	elämälle
+
+elämä+Pl+All	elämille
+
+elämä+Sg+El	elämästä
+
+elämä+Pl+El	elämistä
+
+elämä+Sg+Abl	elämältä
+
+elämä+Pl+Abl	elämiltä
+
+	+?
+
+kuu+Sg+Nom	kuu
+
+kuu+Pl+Nom	kuut
+
+kuu+Sg+Gen	kuun
+
+kuu+Pl+Gen	kuiden
+
+kuu+Sg+Part	kuuta
+
+kuu+Pl+Part	kuita
+
+kuu+Sg+In	kuussa
+
+kuu+Pl+In	kuissa
+
+kuu+Sg+Ad	kuulla
+
+kuu+Pl+Ad	kuilla
+
+kuu+Sg+Ill	kuuhun
+
+kuu+Pl+Ill	kuihin
+
+kuu+Sg+All	kuulle
+
+kuu+Pl+All	kuille
+
+kuu+Sg+El	kuusta
+
+kuu+Pl+El	kuista
+
+kuu+Sg+Abl	kuulta
+
+kuu+Pl+Abl	kuilta
+
+	+?
+
+työ+Sg+Nom	työ
+
+työ+Pl+Nom	työt
+
+työ+Sg+Gen	työn
+
+työ+Pl+Gen	töiden
+
+työ+Sg+Part	työtä
+
+työ+Pl+Part	töitä
+
+työ+Sg+In	työssä
+
+työ+Pl+In	töissä
+
+työ+Sg+Ad	työllä
+
+työ+Pl+Ad	töillä
+
+työ+Sg+Ill	työhön
+
+työ+Pl+Ill	töihin
+
+työ+Sg+All	työlle
+
+työ+Pl+All	töille
+
+työ+Sg+El	työstä
+
+työ+Pl+El	töistä
+
+työ+Sg+Abl	työltä
+
+työ+Pl+Abl	töiltä
+
+	+?
+
+sukka+Sg+Nom	sukka
+
+sukka+Pl+Nom	sukat
+
+sukka+Sg+Gen	sukan
+
+sukka+Pl+Gen	sukien
+
+sukka+Sg+Part	sukkaa
+
+sukka+Pl+Part	sukkia
+
+sukka+Sg+In	sukassa
+
+sukka+Pl+In	sukissa
+
+sukka+Sg+Ad	sukalla
+
+sukka+Pl+Ad	sukilla
+
+sukka+Sg+Ill	sukaan
+
+sukka+Pl+Ill	sukkihin
+
+sukka+Sg+All	sukalle
+
+sukka+Pl+All	sukille
+
+sukka+Sg+El	sukasta
+
+sukka+Pl+El	sukista
+
+sukka+Sg+Abl	sukalta
+
+sukka+Pl+Abl	sukilta
+
+	+?
+
+poika+Sg+Nom	poika
+
+poika+Pl+Nom	pojat
+
+poika+Sg+Gen	pojan
+
+poika+Pl+Gen	poikien
+
+poika+Sg+Part	poikaa
+
+poika+Pl+Part	poikia
+
+poika+Sg+In	pojassa
+
+poika+Pl+In	pojissa
+
+poika+Sg+Ad	pojalla
+
+poika+Pl+Ad	pojilla
+
+poika+Sg+Ill	poikaan
+
+poika+Pl+Ill	poikihin
+
+poika+Sg+All	pojalle
+
+poika+Pl+All	pojille
+
+poika+Sg+El	pojasta
+
+poika+Pl+El	pojista
+
+poika+Sg+Abl	pojalta
+
+poika+Pl+Abl	pojilta
+
+	+?
+
+kaappi+Pl+In	kaapissa
+
+matto+Pl+Ad	matoilla
+
+kukka+Sg+Gen	kukan
+
+	+?
+
+tupa+Sg+In	tuvassa
+
+katu+Sg+Ad	kadulla
+
+vihta+Sg+Ad	vihdalla
+
+poika+Sg+Ad	pojalla
+
+jalka+Sg+Gen	jalan
+
+	+?
+
+matka+Pl+In	matkoissa
+
+kirja+Pl+Part	kirjoja
+
+piha+Pl+Ad	pihoilla
+
+herra+Pl+Gen	herrojen
+
+	+?
+
+koira+Pl+Gen	koirien
+
+poika+Pl+Ad	pojilla
+
+muna+Pl+Part	munia
+
+kuuma+Pl+In	kuumissa
+
+	+?
+
+kampa+Sg+Ad	kammalla
+
+kenkä+Pl+Nom	kengät
+
+ilta+Sg+Ad	illalla
+
+kerta+Sg+Gen	kerran
+
+suku+Sg+In	suvussa
+
+	+?
+
+puu+Pl+Part	puita
+
+tie+Pl+Ad	teillä
+
+	+?
+
+avain+Sg+Nom	avain
+
+avain+Sg+Part	avainta
+
+avain+Sg+Gen	avaimen
+
+avain+Pl+In	avaimissa
+
+	+?
+
+työtön+Sg+Nom	työtön
+
+työtön+Sg+Part	työtöntä
+
+työtön+Sg+Gen	työttömen
+
+työtön+Pl+In	työttömissä
+
+	+?
+
