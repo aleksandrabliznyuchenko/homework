@@ -1,0 +1,186 @@
+# Комментарий кода + правила образования локативных падежей
+
+# правила определения гласных и согласных:
+# задаем набор букв финского алфавита, а также делим гласные звуки на передние, задние и нейтральные
+
+define Consonant b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | z ;
+define FrontVowel ä | ö | y ;
+define NeutralVowel e | i ;
+define BackVowel a | o | u ;
+define Vowel FrontVowel | NeutralVowel | BackVowel | A | E;
+define Letter Vowel | Consonant;
+
+# правила определения падежа и числа:
+# задаем финские падежи и числа (мы будем прибавлять к основе эти показатели (например, "+Nom") каждый раз, когда будем маркировать какой-то падеж/число, а затем будем заменять показатели на нужные нам суффиксы/окончания в зависимости от выбранного правила)
+
+# здесь изначально была ошибка в обозначениях -- вместо адэссива стоял аллатив
+define Case "+Nom" | "+Gen" | "+Part" | "+In" | "+Ad" | "+Ill" | "+All" | "+El" | "+Abl";
+define Number "+Sg" | "+Pl" ; 
+
+# правила определения типа основы:
+# выделяем основы переднего ряда (те, в которых встречаются передние (FrontVowel) и нейтральные (NeutralVowel) гласные)
+# и основы заднего ряда (те основы, в которых встречаются задние (BackVowel) и нейтральные (NeutralVowel) гласные)
+
+define FrontStem [Consonant* [ FrontVowel | NeutralVowel ] ]+ Consonant*;
+define BackStem [Consonant* [ BackVowel | NeutralVowel ] ]* [Consonant* BackVowel] [Consonant* [ BackVowel | NeutralVowel ] ]* Consonant*;
+define Stem Letter+;
+
+# сначала определяем вид основы, затем определяем число, после этого определяем падеж
+define Input Stem Number Case;
+
+# правила образования номинатива:
+# к существительным во множественном числе номинатива добавляется окончание "^" t (все "^" мы убираем в самом конце, ими мы отделяем основы от суффиксов)
+# к существительным в единственном числе номинатива просто прибавляется "^" (то есть по сути не прибаляется показателя)
+
+define NomPl "+Pl" "+Nom" -> "^" t || _ ;
+define NomSg "+Sg" "+Nom" -> "^" || _ ;
+define Nominatives NomPl .o. NomSg ;
+
+# правила образования генитива:
+# в генитиве множественного числа к основе, оканчивающейся двумя гласными, прибавляется показатель -den
+# к остальным основам в генитиве прибавляется показатель -en
+
+define GenDen "+Gen" -> d e n || Vowel Vowel "+Pl" _ ;
+define Gen "+Gen" -> E n || _ ;
+define Genetive GenDen .o. Gen ;
+
+# правила образования партитива:
+# показатель партитива -ta прибавляется к основам на две гласные, либо на согласную (вне зависимости от числа существительного)
+# к остальным основам в партитиве прибавляется показатель -a
+
+define PartTa "+Part" -> t A || [ Consonant Vowel Vowel | Consonant ] Number _ ;
+define PartA "+Part" -> A || _ ;
+
+# правила образования локативных падежей:
+# в обозначениях локативных падежах изначально была ошибка -- вместо адэссива стоял аллатив
+# разбиваем локативные падежи на "иллатив" и "остальные" - мы выделяем иллатив, т.к. его показатели варьируются в зависимости от основы
+
+# в иллативе единственного числа к основе на "согласный + гласный" прибавляется показатель -Vn (где V - последний гласный основы)
+# пишем отдельное правило на каждую гласную
+
+define IllAn "+Ill" -> A n || Letter+ Consonant+ [ a | ä ] "+Sg" _ ;
+define IllEn "+Ill" -> E n || Letter+ Consonant+ e "+Sg" _ ;
+define IllUn "+Ill" -> u n || Letter+ Consonant+ u "+Sg" _ ;
+define IllOn "+Ill" -> o n || Letter+ Consonant+ o "+Sg" _ ;
+define IllÖn "+Ill" -> ö n || Letter+ Consonant+ ö "+Sg" _ ;
+define IllIn "+Ill" -> i n || Letter+ Consonant+ i "+Sg" _ ;
+
+define IllVn IllAn .o. IllEn .o. IllUn .o. IllOn .o. IllÖn .o. IllIn ; 
+
+# в иллативе единственного числа к односложным основам с исходом на две гласные прибавляется показатель -hVn
+# пишем отдельное правило на каждую гласную
+
+define IllHan "+Ill" -> h A n || Consonant Vowel [ a | ä ] "+Sg" _ ;
+define IllHen "+Ill" -> h E n || Consonant Vowel e "+Sg" _ ;
+define IllHun "+Ill" -> h u n || Consonant Vowel u "+Sg" _ ;
+define IllHon "+Ill" -> h o n || Consonant Vowel o "+Sg" _ ;
+define IllHön "+Ill" -> h ö n || Consonant Vowel ö "+Sg" _ ;
+define IllHin "+Ill" -> h i n || Consonant Vowel i "+Sg" _ ;
+
+define IllhVn IllHan .o. IllHen .o. IllHun .o. IllHon .o. IllHön .o. IllHin ;
+
+# в иллативе единственного числа к многосложным основам с исходом на две гласные прибавляется показатель -seen (а во множественном числе -siin)
+
+define IllSeen "+Ill" -> s e e n || Letter+ Consonant Vowel Vowel "+Sg" _ ;
+define IllSiin "+Ill" -> s i i n || Letter+ Consonant Vowel Vowel "+Pl" _ ;
+
+# группируем все правила для иллатива единственного числа
+
+define IllSg IllVn .o. IllhVn .o. IllSeen ;
+
+# в иллативе множественного числа к односложным основам с исходом на две гласные прибавляется показатель -hin
+# правда, иногда вместо -hin прибавляется только -in, как в случае с elämä, но это вроде не очень регулярно
+
+define IllPl "+Ill" -> h i n || "+Pl" _ ;
+
+# группируем все правила образования иллатива
+
+define Illative IllSg .o. IllSiin .o. IllPl ;
+
+# в инессиве и адэссиве к основам прибавляются показатели -ssa и -lla соответственно
+# в элативе и аблативе к основам прибавляются показатели -sta и -lta соответственно
+
+define OtherLocativeCases "+In" -> s s A , "+Ad" -> l l A , "+All" -> l l E , "+El" -> s t A , "+Abl" -> l t A  || _ ;
+
+# группируем все правила формирования локативных падежей
+
+define LocativeCases Illative .o. OtherLocativeCases ;
+
+# сначала обрабатываем партитив, затем локативные падежи
+
+define OtherCases PartTa .o. PartA .o. LocativeCases ;
+
+# чередования основ во множественном числе:
+# показатель "+Sg" становится "^"
+# -ä и -i опускаются перед показателями множественного числа
+# -а переходит в -о, если двусложная основа оканчивается на эти гласные, а первый гласный основы - a | e | i
+# -а опускается, если двусложная основа оканчивается этой буквой, а первый гласный основы - o | u
+# если после показателя множественного числа идет согласная, а до него стоит гласная, эта гласная опускается (т.е. остается только показатель -i)
+# показатель "+Pl" становится "^" i
+
+define Sg "+Sg" -> "^" || _ ;
+define OmitA ä -> 0, i -> 0 || _ "+Pl";
+define Ai2Oi a -> o || [ a | e | i ] Vowel* Consonant+ _ "+Pl";
+define Ai2i a -> 0 || [ o | u ] Vowel* Consonant+ _ "+Pl";
+define OmitFirst Vowel -> 0 || _ Vowel "+Pl" Consonant;
+define Pl "+Pl" -> "^" i || _ ;
+
+define NumberInfl Sg .o. OmitA .o. Ai2i .o. Ai2Oi .o. OmitFirst .o. Pl ;
+
+# фонетические правила:
+# -i переходит в -j, если оказывается между двумя любыми гласными
+# A переходит в -a в основах заднего ряда
+# A переходит в -ä в основах переднего ряда
+
+define JotPl i -> j || Vowel "^"* _ "^"* Vowel ;
+define HarmonyBack A -> a || BackStem "^" Letter* _;
+define HarmonyFront A -> ä || FrontStem "^" Letter* _;
+
+define Phonetics JotPl .o. HarmonyBack .o. HarmonyFront ;
+
+# чередования основ:
+# двойные согласные p | t | k последнего слога основы переходят в одинарные, если идут перед сочетанием "гласный + согласный", т.е. если следующий слог закрытый
+
+# ОШИБКА: изначальное правило не обрабатывает множественное число в локативных падежах, так как двойная согласная идет перед сочетанием "гласный + гласный + согласный"
+# в то же время двойная согласная НЕ должна была сокращаться в таком же контексте в иллативе
+# добавим дополнение к этому правилу для локативных падежей множественного числа (однако теперь двойная согласная будет сокращаться и в иллативе единственного числа, так что ошибка исправлена не полностью)
+
+# одинарная -р переходит в -v в последнем слоге основы, если следующий слог закрытый
+# одинарная -t переходит в -d в последнем слоге основы, если следующий слог закрытый
+# одинарная -k опускается в последнем слоге основы, если следующий слог закрытый
+
+# ОШИБКА: так как правило SingleTK идет до правила DoublePTK в правиле Alternations, в словах типа tyttö последняя t заменяется на d, хотя по идее t просто должна сокращаться по правилу DoublePTK
+# поэтому добавляем дополнительное правило замены сочетания td на t в правило DoublePTK, которое будет срабатывать после этой замены;
+
+# в последнем слоге основы сочетание -mp переходит в -mm, сочетание -nt в -nn, -nk в -ng, -lt в -ll, а -rt в -rr, если следующий слог закрытый
+# в последнем слоге основы сочетание -lke переходит в -lje, сочетание -rke в -rje, -hke в -hje, а -uku в -uvu, если следующий слог закрытый
+
+# в последнем слоге основы сочетание -in переходит в -im, а -tön в -ttöm, если следующий слог начинается с гласного
+# если основа оканчивается на гласный, а показатель числа начинается с Е, эта Е опускается
+# если Е не опустили, заменяем ее на -е
+
+define DoublePTK p p -> p , t t -> t , k k -> k , t d -> t || Letter _ "^"* Vowel "^"* Consonant [ .#. | Consonant ] ;
+define DoublePTKLocPL p p -> p , t t -> t , k k -> k , t d -> t || Letter _ "^"* Vowel "^"* Vowel "^"* Consonant [ .#. | Consonant ] ;
+define SingleP p -> v || Vowel _ "^"* Vowel "^"* Consonant [ .#. | Consonant ] ;
+define SingleTK t -> d , k -> 0 || Letter _ "^"* Vowel "^"* Consonant [ .#. | Consonant ] ; 
+define TwoLetter m p -> m m , n t -> n n , n k -> n g , l t -> l l , r t -> r r || Letter _ "^"* Vowel "^"* Consonant [ .#. | Consonant ] ;
+define ThreeLetter l k e -> l j e , r k e -> r j e , h k e -> h j e , u k u -> u v u || Letter _ "^"* Consonant [ .#. | Consonant ] ;
+define N2M i n -> i m , t ö n -> t t ö m || _ "^" Vowel;
+define EOmit E -> 0 || Vowel "^" _;
+define EReal E -> e || _;
+
+define Alternations N2M .o. EOmit .o. EReal .o. ThreeLetter .o. TwoLetter .o. SingleP .o. SingleTK .o. DoublePTK .o. DoublePTKLocPL ;
+
+# задаем порядок применения правил склонения существительных по падежам
+
+define Affixes Nominatives .o. Genetive .o. OtherCases .o. NumberInfl .o. Alternations .o. Phonetics;
+
+# убираем все "^"
+
+define Cleanup "^" -> 0 || _ ;
+
+# для каждого слова определяем, показатели какого числа и какого падежа мы будем прибавлять к основе -- прибавляем нужные аффиксы -- проводим чистку, т.е. убираем "^"
+# запускаем автомат
+
+define Grammar Input .o. Affixes .o. Cleanup ;
+push Grammar
